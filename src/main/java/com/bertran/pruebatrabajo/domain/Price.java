@@ -1,12 +1,10 @@
 package com.bertran.pruebatrabajo.domain;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Table;
 import java.time.LocalDateTime;
 
 @Entity
@@ -14,7 +12,9 @@ import java.time.LocalDateTime;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class Prices {
+@EqualsAndHashCode
+@Table(name = "PRICES")
+public class Price {
 
     private Long brandId;
     private LocalDateTime startDate;
@@ -25,5 +25,4 @@ public class Prices {
     private Long priority;
     private Double price;
     private String curr;
-
 }
